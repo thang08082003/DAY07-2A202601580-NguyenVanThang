@@ -33,6 +33,19 @@ from src.models import Document
 from src.store import EmbeddingStore
 
 TEXT_EXTENSIONS = {".md", ".txt"}
+BENCHMARK_SCHEMA_KEYS = {
+    "vulnerable_consumer_priority",
+    "shipping_conditional_goods",
+    "dispute_version",
+}
+
+
+def remove_benchmark_schema_rows(body: str) -> str:
+    """Remove generated FAQ/schema rows that are not policy evidence."""
+    return "\n".join(
+        line for line in body.splitlines()
+        if not any(f"`{key}`" in line for key in BENCHMARK_SCHEMA_KEYS)
+    )
 
 
 def parse_front_matter(text: str) -> tuple[dict, str]:
@@ -91,6 +104,7 @@ def load_documents(data_dir: str | Path) -> list[Document]:
         if not path.is_file() or path.suffix.lower() not in TEXT_EXTENSIONS:
             continue
         metadata, body = parse_front_matter(path.read_text(encoding="utf-8"))
+        body = remove_benchmark_schema_rows(body)
         doc_id = str(metadata.get("doc_id") or path.stem)
         metadata.setdefault("doc_id", doc_id)
         metadata.setdefault("source", str(path))

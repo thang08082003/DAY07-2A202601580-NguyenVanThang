@@ -47,6 +47,37 @@ def demo_llm(prompt: str) -> str:
     return f"[DEMO LLM] Generated answer from prompt preview: {preview}..."
 
 
+def openrouter_llm(prompt: str) -> str:
+    """Call an OpenRouter chat model through the OpenAI-compatible API."""
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ["OPENROUTER_API_KEY"],
+        base_url="https://openrouter.ai/api/v1",
+        default_headers={
+            "HTTP-Referer": os.getenv("OPENROUTER_HTTP_REFERER", "http://localhost"),
+            "X-OpenRouter-Title": os.getenv("OPENROUTER_TITLE", "Lab 7 RAG"),
+        },
+    )
+    response = client.chat.completions.create(
+        model=os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini"),
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
+    )
+    return response.choices[0].message.content or ""
+
+
+def select_llm():
+    load_dotenv(override=False)
+    if os.getenv("OPENROUTER_API_KEY"):
+        try:
+            import openai  # noqa: F401
+            return openrouter_llm
+        except ImportError:
+            print("OPENROUTER_API_KEY đã có nhưng thiếu package openai; dùng demo_llm.")
+    return demo_llm
+
+
 def run_manual_demo(question: str | None = None, data_dir: str | None = None) -> int:
     data_dir = data_dir or DEFAULT_DATA_DIR
     query = question or "Tóm tắt thông tin chính từ bộ tài liệu."
@@ -79,7 +110,7 @@ def run_manual_demo(question: str | None = None, data_dir: str | None = None) ->
         print(f"   {result['content'][:120].replace(chr(10), ' ')}...")
 
     print("\n=== KnowledgeBaseAgent ===")
-    agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
+    agent = KnowledgeBaseAgent(store=store, llm_fn=select_llm())
     print(agent.answer(query, top_k=3))
     return 0
 
