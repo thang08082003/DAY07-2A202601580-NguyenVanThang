@@ -50,7 +50,7 @@
 
 **Expected document:** `shopee_quy_dinh_dang_ban` — Mục E - Xử lý vi phạm.
 
-**Agent answer:** Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về việc xử lý vi phạm quy định đăng bán sản phẩm.
+**Agent answer:** Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về cách xử lý vi phạm quy định đăng bán sản phẩm.
 
 - Rank 1, score `0.2633`, doc `shopee_quy_dinh_dang_ban`, chunk `36`: # 3. Quy định riêng với một số ngành hàng
 - Rank 2, score `0.2532`, doc `shopee_quy_dinh_dang_ban`, chunk `81`: ## 4.4. Thông tin liên hệ Thông tin sản phẩm không bao gồm:  - Số điện thoại; - Thông tin liên lạc nhằm mục đích quảng cáo; - Thông tin dẫn người dùng tới website khác.
@@ -64,7 +64,7 @@
 
 **Expected document:** `shopee_chinh_sach_van_chuyen` — Mục 2.1 - Giới hạn kích thước và cân nặng.
 
-**Agent answer:** There is not enough information provided in the context to determine the maximum size and weight of a package when shipping through Shopee.
+**Agent answer:** There is not enough information provided in the context to answer the question about the maximum size and weight of a package when shipping through Shopee.
 
 - Rank 1, score `0.3148`, doc `shopee_quy_dinh_dang_ban`, chunk `9`: ### 1.3. Chứng từ cung cấp cho Shopee Tất cả chứng từ mà Người Bán được yêu cầu cung cấp phải:  - Được scan từ chứng từ gốc; - Không được làm giả; - Không được chỉnh sửa; - Không được tẩy xóa.  Người Bán phải đảm bảo và cam kết về tính xác thực của c
 - Rank 2, score `0.3019`, doc `shopee_chinh_sach_van_chuyen`, chunk `77`: ### 4.1. Mức bồi thường tối đa 5 Hàng hóa móp méo,        30% giá bán sản phẩm                             bể vỡ, hư hại từ 1%                              đến 30% nhưng vẫn                                sử dụng được và                              
@@ -104,7 +104,7 @@
 - Unfiltered IDs: `['shopee_chinh_sach_van_chuyen::chunk_118::118', 'shopee_chinh_sach_van_chuyen::chunk_43::43', 'shopee_giai_quyet_tranh_chap::chunk_24::253']`
 - Filtered evidence: **none** (Không có chunk top-3 chứa cụm bằng chứng yêu cầu.)
 - Unfiltered evidence: **none** (Không có chunk top-3 chứa cụm bằng chứng yêu cầu.)
-- Filtered agent answer: Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về việc xử lý vi phạm quy định đăng bán sản phẩm.
+- Filtered agent answer: Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về cách xử lý vi phạm quy định đăng bán sản phẩm.
 - Unfiltered agent answer: There is not enough information in the provided context to answer how a seller would be penalized for violating product listing regulations. The context does not specify the consequences or procedures related to such violations.
 - Nhận xét: filter được áp dụng trước rank và giới hạn kết quả trong tài liệu seller. Trong lần chạy này cả hai top-3 đều không chứa đủ bằng chứng về mục xử lý vi phạm; filter giảm phạm vi ứng viên nhưng không khắc phục giới hạn của mock embedding.
 

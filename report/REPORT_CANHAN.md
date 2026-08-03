@@ -121,7 +121,7 @@ Filter metadata phải được áp dụng trước khi rank; trong lần chạy
 
 - Strategy: `RecursiveHierarchicalChunker(chunk_size=400)`: tách theo heading/section trước, sau đó recursive split section dài và gắn lại heading vào từng chunk con.
 - Corpus gồm 5 tài liệu và **473 chunks**.
-- Embedder: MockEmbedder fallback; vector xác định nhưng gần như ngẫu nhiên theo toàn chuỗi, không phản ánh tốt ngữ nghĩa tiếng Việt.
+- Embedder: local multilingual `paraphrase-multilingual-MiniLM-L12-v2`.
 - Đã chạy đủ 5 query cố định với `top_k=3`; query 2 chạy A/B với và không có `customer_role=seller`.
 - Kết quả đầy đủ: [benchmark_results_recursive_400.json](../benchmark_results_recursive_400.json).
 - Report benchmark chi tiết: [personal_report_recursive_400.md](../personal_report_recursive_400.md).
@@ -131,9 +131,25 @@ Filter metadata phải được áp dụng trước khi rank; trong lần chạy
 - **Precision:** top-3 không chứa chunk có bằng chứng trực tiếp theo bộ kiểm tra; query 4 đúng tài liệu nhưng sai section.
 - **Chunk coherence:** chunk giữ được nhiều heading/đoạn tự nhiên, nhưng bảng số liệu và các bước quy trình có thể bị tách khỏi phần liên quan.
 - **Metadata utility:** filter seller làm thay đổi tập ứng viên và loại tài liệu không phù hợp, nhưng không thay thế được embedding semantic.
-- **Grounding:** `demo_llm` chỉ trả preview prompt, nên chưa tạo câu trả lời hoàn chỉnh có citation.
+- **Grounding:** OpenRouter/local run trả lời dựa trên context, nhưng vẫn cần kiểm tra citation và độ đầy đủ theo từng gold answer.
 
 **Failure case:** Query 3 không retrieve được chunk chứa bảng giới hạn kích thước/cân nặng trong top-3; các kết quả nói về thời hạn trả hàng hoặc bảng bồi thường. Query 5 cũng không lấy được section đồng kiểm ở top-3. Nguyên nhân chính là MockEmbedder không biểu diễn tốt ngữ nghĩa tiếng Việt; hierarchical chunking giữ heading tốt hơn nhưng không thể bù cho embedding gần ngẫu nhiên. Đề xuất cài local multilingual embedder và đánh giá lại cùng query/corpus.
+
+### Kết quả benchmark local embedding mới nhất
+
+Lần thử với `chunk_size=800` vẫn dùng cùng corpus, 5 query, filter và `top_k=3`; tổng cộng 324 chunks và đạt **1/10**. Việc tăng kích thước chunk chưa đủ để đưa các section đáp án vào top-3.
+
+Lưu ý: đoạn failure case phía trên là kết quả mock trước đó; bảng dưới đây là kết quả chính thức sau khi chuyển sang local embedding.
+
+| Query | Score | Nhận xét |
+|---:|---:|---|
+| 1 | 0/2 | Top-3 chưa chứa Mục 4.4 về Shopee Mart/ngoại lệ. |
+| 2 | 0/2 | Filter seller hoạt động nhưng top-3 không chứa Mục E xử lý vi phạm. |
+| 3 | 1/2 | Có chunk đúng section và số liệu 320 × 320 × 320 cm, 200 kg; câu trả lời chưa đầy đủ toàn bảng. |
+| 4 | 0/2 | Đúng document top-1 nhưng thiếu các bước cụ thể. |
+| 5 | 0/2 | Đúng chủ đề vận chuyển nhưng chưa retrieve section đồng kiểm/tem niêm phong. |
+
+**Tổng điểm benchmark:** **1/10**.
 
 ## Tự Đánh Giá (Phần Cá Nhân)
 
@@ -143,5 +159,5 @@ Filter metadata phải được áp dụng trước khi rank; trong lần chạy
 | Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
 | Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
 | Dự đoán độ tương tự (Similarity Predictions) | 4 / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | 0 / 10 |
-| **Tổng phần cá nhân** | **49 / 60** |
+| Kết quả truy xuất của tôi (Competition Results) | 1 / 10 |
+| **Tổng phần cá nhân** | **50 / 60** |

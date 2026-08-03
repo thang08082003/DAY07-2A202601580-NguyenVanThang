@@ -6,39 +6,39 @@
     "filter": null,
     "strategy": "RecursiveHierarchicalChunker",
     "strategy_params": {
-      "chunk_size": 400
+      "chunk_size": 800
     },
-    "store_size": 473,
+    "store_size": 324,
     "gold_answer": "Trả hàng COM không áp dụng cho sản phẩm thuộc Shopee Mart và một số người bán/sản phẩm khác theo từng thời điểm dựa trên đánh giá của Shopee.",
     "expected_doc_id": "shopee_tra_hang_hoan_tien",
     "expected_chunk_note": "Mục 4.4 - Các trường hợp loại trừ Trả hàng COM.",
     "results": [
       {
         "rank": 1,
-        "score": 0.3447087188062748,
-        "id": "shopee_dieu_khoan_mall::chunk_45::174",
-        "doc_id": "shopee_dieu_khoan_mall",
-        "chunk_index": 45,
-        "preview": "## 11.2. Bưu kiện bị hư hại Nếu bưu kiện:  - Có dấu hiệu đã bị mở; - Bị ướt; - Bị rách; - Bị móp méo; - Bị hư hại;  Người Bán phải:  1. Từ chối nhận hàng. 2. Thông báo ngay cho Shopee trong vòng **24 giờ kể từ thời điểm nhận hàng**.  ---"
+        "score": 0.37881820870191707,
+        "id": "shopee_chinh_sach_van_chuyen::chunk_80::80",
+        "doc_id": "shopee_chinh_sach_van_chuyen",
+        "chunk_index": 80,
+        "preview": "# Gợi ý chunking cho RAG `shipping_claim_deadline`            Thời hạn khiếu nại      Mất hàng hoàn trả phải                                                                khiếu nại trong bao                                                           "
       },
       {
         "rank": 2,
-        "score": 0.33389251725911107,
-        "id": "shopee_quy_dinh_dang_ban::chunk_8::275",
-        "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 8,
-        "preview": "### 1.2. Tuân thủ pháp luật Đối với Người Bán là pháp nhân có vốn đầu tư nước ngoài, Người Bán cần có **Giấy phép kinh doanh phù hợp với quy định của pháp luật hiện hành**."
+        "score": 0.3447087188062748,
+        "id": "shopee_dieu_khoan_mall::chunk_30::113",
+        "doc_id": "shopee_dieu_khoan_mall",
+        "chunk_index": 30,
+        "preview": "## 11.2. Bưu kiện bị hư hại Nếu bưu kiện:  - Có dấu hiệu đã bị mở; - Bị ướt; - Bị rách; - Bị móp méo; - Bị hư hại;  Người Bán phải:  1. Từ chối nhận hàng. 2. Thông báo ngay cho Shopee trong vòng **24 giờ kể từ thời điểm nhận hàng**.  ---"
       },
       {
         "rank": 3,
         "score": 0.3334312525860636,
-        "id": "shopee_tra_hang_hoan_tien::chunk_44::432",
+        "id": "shopee_tra_hang_hoan_tien::chunk_27::297",
         "doc_id": "shopee_tra_hang_hoan_tien",
-        "chunk_index": 44,
+        "chunk_index": 27,
         "preview": "## 7. Trách nhiệm về chi phí vận chuyển hoàn trả của Người Bán"
       }
     ],
-    "agent_answer": "There is not enough information provided in the context to answer the question about which items are not supported for return due to change of mind.",
+    "agent_answer": "There is not enough information to answer the question regarding which items are not supported for return due to change of mind. The provided context does not specify any particular items or categories that are excluded from return for this reason.",
     "evidence_found": false,
     "evidence_note": "Không có chunk top-3 chứa cụm bằng chứng yêu cầu.",
     "agent_correct": false,
@@ -54,39 +54,39 @@
     },
     "strategy": "RecursiveHierarchicalChunker",
     "strategy_params": {
-      "chunk_size": 400
+      "chunk_size": 800
     },
-    "store_size": 473,
+    "store_size": 324,
     "gold_answer": "Tùy mức độ vi phạm, Shopee có thể xóa/khóa/tạm ẩn sản phẩm, giới hạn hoặc khóa tài khoản, yêu cầu bồi thường, cấn trừ tiền, khóa rút tiền, cung cấp thông tin hoặc khởi kiện.",
     "expected_doc_id": "shopee_quy_dinh_dang_ban",
     "expected_chunk_note": "Mục E - Xử lý vi phạm.",
     "results": [
       {
         "rank": 1,
-        "score": 0.2632513817392758,
-        "id": "shopee_quy_dinh_dang_ban::chunk_36::303",
+        "score": 0.3283037309100765,
+        "id": "shopee_quy_dinh_dang_ban::chunk_13::188",
         "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 36,
-        "preview": "# 3. Quy định riêng với một số ngành hàng"
+        "chunk_index": 13,
+        "preview": "## 3. Các hành vi không được thực hiện 5. So sánh trực tiếp về giá cả, chất lượng, hiệu quả sử dụng sản phẩm, hàng hóa, dịch vụ của mình với sản phẩm, hàng hóa, dịch vụ cùng loại của tổ chức, cá nhân khác.  6. Có nội dung cạnh tranh không lành mạnh t"
       },
       {
         "rank": 2,
-        "score": 0.2532299025630394,
-        "id": "shopee_quy_dinh_dang_ban::chunk_81::348",
+        "score": 0.2632513817392758,
+        "id": "shopee_quy_dinh_dang_ban::chunk_29::204",
         "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 81,
-        "preview": "## 4.4. Thông tin liên hệ Thông tin sản phẩm không bao gồm:  - Số điện thoại; - Thông tin liên lạc nhằm mục đích quảng cáo; - Thông tin dẫn người dùng tới website khác."
+        "chunk_index": 29,
+        "preview": "# 3. Quy định riêng với một số ngành hàng"
       },
       {
         "rank": 3,
-        "score": 0.21484148510977294,
-        "id": "shopee_quy_dinh_dang_ban::chunk_49::316",
+        "score": 0.2532299025630394,
+        "id": "shopee_quy_dinh_dang_ban::chunk_61::236",
         "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 49,
-        "preview": "### Nguồn gốc sản phẩm Người Bán chỉ đăng bán sản phẩm có **nguồn gốc hợp pháp** theo quy định ghi trong giấy phép bán lẻ rượu."
+        "chunk_index": 61,
+        "preview": "## 4.4. Thông tin liên hệ Thông tin sản phẩm không bao gồm:  - Số điện thoại; - Thông tin liên lạc nhằm mục đích quảng cáo; - Thông tin dẫn người dùng tới website khác."
       }
     ],
-    "agent_answer": "Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về cách xử lý vi phạm quy định đăng bán sản phẩm.",
+    "agent_answer": "Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về cách xử lý vi phạm quy định đăng bán sản phẩm. Các quy định chỉ nêu rõ các hành vi không được thực hiện mà không đề cập đến hình thức xử lý vi phạm [1].",
     "evidence_found": false,
     "evidence_note": "Không có chunk top-3 chứa cụm bằng chứng yêu cầu.",
     "agent_correct": false,
@@ -100,9 +100,9 @@
     "filter": null,
     "strategy": "RecursiveHierarchicalChunker",
     "strategy_params": {
-      "chunk_size": 400
+      "chunk_size": 800
     },
-    "store_size": 473,
+    "store_size": 324,
     "gold_answer": "Giới hạn phụ thuộc phương thức vận chuyển. Ví dụ Hỏa Tốc tối đa 60 x 60 x 60 cm và 30 kg; Trong ngày, Hỏa Tốc - Ưu Tiên, Shopee Xử Lý và Hàng Cồng Kềnh có thể đạt 320 x 320 x 320 cm và 200 kg.",
     "expected_doc_id": "shopee_chinh_sach_van_chuyen",
     "expected_chunk_note": "Mục 2.1 - Giới hạn kích thước và cân nặng.",
@@ -110,26 +110,26 @@
       {
         "rank": 1,
         "score": 0.31475822242945534,
-        "id": "shopee_quy_dinh_dang_ban::chunk_9::276",
+        "id": "shopee_quy_dinh_dang_ban::chunk_8::183",
         "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 9,
+        "chunk_index": 8,
         "preview": "### 1.3. Chứng từ cung cấp cho Shopee Tất cả chứng từ mà Người Bán được yêu cầu cung cấp phải:  - Được scan từ chứng từ gốc; - Không được làm giả; - Không được chỉnh sửa; - Không được tẩy xóa.  Người Bán phải đảm bảo và cam kết về tính xác thực của c"
       },
       {
         "rank": 2,
-        "score": 0.30187954792870525,
-        "id": "shopee_chinh_sach_van_chuyen::chunk_77::77",
+        "score": 0.30034147695582936,
+        "id": "shopee_chinh_sach_van_chuyen::chunk_47::47",
         "doc_id": "shopee_chinh_sach_van_chuyen",
-        "chunk_index": 77,
-        "preview": "### 4.1. Mức bồi thường tối đa 5 Hàng hóa móp méo,        30% giá bán sản phẩm                             bể vỡ, hư hại từ 1%                              đến 30% nhưng vẫn                                sử dụng được và                              "
+        "chunk_index": 47,
+        "preview": "## 4. Bồi thường Shopee sẽ thông báo trực tiếp kết quả xử lý khiếu nại cho Người Mua/Người Bán, kèm thông tin về mức bồi thường nếu có."
       },
       {
         "rank": 3,
-        "score": 0.30034147695582936,
-        "id": "shopee_chinh_sach_van_chuyen::chunk_72::72",
-        "doc_id": "shopee_chinh_sach_van_chuyen",
-        "chunk_index": 72,
-        "preview": "## 4. Bồi thường Shopee sẽ thông báo trực tiếp kết quả xử lý khiếu nại cho Người Mua/Người Bán, kèm thông tin về mức bồi thường nếu có."
+        "score": 0.2937753379215054,
+        "id": "shopee_quy_dinh_dang_ban::chunk_91::266",
+        "doc_id": "shopee_quy_dinh_dang_ban",
+        "chunk_index": 91,
+        "preview": "### 3.2. Quà tặng không đăng công khai Khi quà tặng kèm không được đăng công khai trên thông tin sản phẩm chính, Shopee sẽ không can thiệp xử lý khiếu nại về hạn sử dụng của quà tặng kèm.  Tuy nhiên, hành vi cố ý tặng kèm sản phẩm hết hạn sử dụng có "
       }
     ],
     "agent_answer": "There is not enough information provided in the context to answer the question about the maximum size and weight of a package when shipping through Shopee.",
@@ -146,39 +146,39 @@
     "filter": null,
     "strategy": "RecursiveHierarchicalChunker",
     "strategy_params": {
-      "chunk_size": 400
+      "chunk_size": 800
     },
-    "store_size": 473,
+    "store_size": 324,
     "gold_answer": "Quy trình gồm: gửi khiếu nại; Shopee tiếp nhận và hỗ trợ; thu thập thông tin và xử lý; nếu vượt thẩm quyền thì chuyển vụ việc đến cơ quan nhà nước có thẩm quyền.",
     "expected_doc_id": "shopee_giai_quyet_tranh_chap",
     "expected_chunk_note": "Các mục Bước 1 đến Bước 4 của quy trình.",
     "results": [
       {
         "rank": 1,
-        "score": 0.2760570870390869,
-        "id": "shopee_quy_dinh_dang_ban::chunk_113::380",
+        "score": 0.2859028278954711,
+        "id": "shopee_quy_dinh_dang_ban::chunk_11::186",
         "doc_id": "shopee_quy_dinh_dang_ban",
-        "chunk_index": 113,
-        "preview": "### 3.1. Quà tặng được đăng công khai Khi quà tặng kèm được đăng công khai trên thông tin sản phẩm chính, quy định về hạn sử dụng sẽ được áp dụng **tương tự sản phẩm chính**."
+        "chunk_index": 11,
+        "preview": "## 2. Các nội dung không được phép đăng bán 12. Sản phẩm vi phạm quyền sở hữu trí tuệ và/hoặc bất kỳ nhãn hiệu hàng hóa nào của bất kỳ bên thứ ba nào.  13. Các sản phẩm nằm trong **Danh sách sản phẩm bị cấm/hạn chế của Shopee**.  ---"
       },
       {
         "rank": 2,
-        "score": 0.2722356009100138,
-        "id": "shopee_chinh_sach_van_chuyen::chunk_51::51",
-        "doc_id": "shopee_chinh_sach_van_chuyen",
-        "chunk_index": 51,
-        "preview": "### 2.3. Công thức khối lượng quy đổi ``` text 2,5 kg > 0,5 kg ```  nên khối lượng tính cước là:  ``` text 2,5 kg ```"
+        "score": 0.2760570870390869,
+        "id": "shopee_quy_dinh_dang_ban::chunk_90::265",
+        "doc_id": "shopee_quy_dinh_dang_ban",
+        "chunk_index": 90,
+        "preview": "### 3.1. Quà tặng được đăng công khai Khi quà tặng kèm được đăng công khai trên thông tin sản phẩm chính, quy định về hạn sử dụng sẽ được áp dụng **tương tự sản phẩm chính**."
       },
       {
         "rank": 3,
-        "score": 0.2710469209676745,
-        "id": "shopee_dieu_khoan_mall::chunk_52::181",
-        "doc_id": "shopee_dieu_khoan_mall",
-        "chunk_index": 52,
-        "preview": "# 14. Sản phẩm bị cấm/hạn chế Nếu Người Bán chào bán hoặc bán sản phẩm bị hạn chế theo Chính Sách Cấm/Hạn Chế Sản Phẩm của Shopee, Shopee có quyền:  - Loại bỏ sản phẩm khỏi Shopee Mall. - Hoàn tiền cho Người Mua. - Thực hiện các điều chỉnh cần thiết."
+        "score": 0.26641962707983013,
+        "id": "shopee_quy_dinh_dang_ban::chunk_36::211",
+        "doc_id": "shopee_quy_dinh_dang_ban",
+        "chunk_index": 36,
+        "preview": "## 3.5. Nhà cửa & Đời sống Đăng sản phẩm theo đúng định dạng được Shopee quy định.  ---"
       }
     ],
-    "agent_answer": "Không có đủ thông tin trong bối cảnh để trả lời câu hỏi về quy trình nhờ Shopee giải quyết tranh chấp giữa người mua và người bán.",
+    "agent_answer": "Không có đủ thông tin trong bối cảnh để trả lời câu hỏi về quy trình nhờ Shopee giải quyết tranh chấp.",
     "evidence_found": false,
     "evidence_note": "Không có chunk top-3 chứa cụm bằng chứng yêu cầu.",
     "agent_correct": false,
@@ -192,9 +192,9 @@
     "filter": null,
     "strategy": "RecursiveHierarchicalChunker",
     "strategy_params": {
-      "chunk_size": 400
+      "chunk_size": 800
     },
-    "store_size": 473,
+    "store_size": 324,
     "gold_answer": "Chính sách vận chuyển không cho phép kiểm tra hàng trước khi thanh toán và nhận hàng; ngoại lệ là đơn hàng được đồng kiểm. Khi đồng kiểm, cần tuân thủ quy định và tình trạng tem niêm phong có thể ảnh hưởng đến xử lý/bồi thường.",
     "expected_doc_id": "shopee_chinh_sach_van_chuyen",
     "expected_chunk_note": "Mục E.1 - Kiểm tra hàng trước khi thanh toán; các bảng về tem niêm phong.",
@@ -202,26 +202,26 @@
       {
         "rank": 1,
         "score": 0.4654305090882596,
-        "id": "shopee_chinh_sach_van_chuyen::chunk_62::62",
+        "id": "shopee_chinh_sach_van_chuyen::chunk_40::40",
         "doc_id": "shopee_chinh_sach_van_chuyen",
-        "chunk_index": 62,
+        "chunk_index": 40,
         "preview": "## 2. Thời gian xử lý khiếu nại Shopee xử lý khiếu nại tối đa **10 ngày làm việc** kể từ khi nhận đủ bằng chứng hợp lệ từ các bên liên quan.  Đối với vụ việc có nhiều tình tiết phức tạp cần xác minh thêm:  -   Thời gian xử lý có thể kéo dài hơn. -   "
       },
       {
         "rank": 2,
         "score": 0.38337291569577653,
-        "id": "shopee_chinh_sach_van_chuyen::chunk_109::109",
+        "id": "shopee_chinh_sach_van_chuyen::chunk_73::73",
         "doc_id": "shopee_chinh_sach_van_chuyen",
-        "chunk_index": 109,
+        "chunk_index": 73,
         "preview": "## Khối lượng tính cước ``` text Khối lượng tính cước = MAX(     Khối lượng thực tế sau đóng gói,     Khối lượng quy đổi ) ```"
       },
       {
         "rank": 3,
-        "score": 0.34570945184135293,
-        "id": "shopee_tra_hang_hoan_tien::chunk_38::426",
-        "doc_id": "shopee_tra_hang_hoan_tien",
-        "chunk_index": 38,
-        "preview": "## 5. Quyền của Người Bán - Chưa nhận được Sản Phẩm Hoàn Trả; - Sản Phẩm Hoàn Trả không thuộc trường hợp Người Mua được hoàn hàng/trả tiền; - Sản Phẩm Hoàn Trả bị hư hỏng hoặc mất mát trong quá trình hoàn trả;  Người Bán cần gửi phản hồi trong vòng *"
+        "score": 0.31836059223432517,
+        "id": "shopee_chinh_sach_van_chuyen::chunk_68::68",
+        "doc_id": "shopee_chinh_sach_van_chuyen",
+        "chunk_index": 68,
+        "preview": "## 9. Quyết định cuối cùng về tranh chấp vận chuyển Mọi tranh chấp liên quan đến vận chuyển được giải quyết theo:  **Chính sách Vận Chuyển Shopee.**  Quyền quyết định cuối cùng thuộc về:  **Shopee.**"
       }
     ],
     "agent_answer": "Không có đủ thông tin trong ngữ cảnh để trả lời câu hỏi về việc có được bóc tem (seal) của hộp điện thoại ra để thử khi đồng kiểm hay không.",

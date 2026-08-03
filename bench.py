@@ -12,8 +12,8 @@ from src.chunking import ChunkingStrategyComparator, RecursiveChunker
 
 DATA_DIR = "data/k4_ecommerce"
 TOP_K = 3
-RESULTS_PATH = Path("benchmark_results_recursive_400.json")
-REPORT_PATH = Path("personal_report_recursive_400.md")
+RESULTS_PATH = Path("benchmark_results_recursive_800.json")
+REPORT_PATH = Path("personal_report_recursive_800.md")
 SHORT_REPORT_PATH = Path("report_canhan.md")
 
 
@@ -120,7 +120,7 @@ def print_baseline(documents) -> None:
     comparator = ChunkingStrategyComparator()
     print("=== BASELINE CHUNKING (front matter excluded) ===")
     for document in documents[:3]:
-        comparison = comparator.compare(document.content, chunk_size=400)
+        comparison = comparator.compare(document.content, chunk_size=800)
         print(f"\nDocument: {document.metadata.get('doc_id')} | {document.metadata.get('title', document.id)}")
         print("Strategy         Count    Avg length")
         for name in ("fixed_size", "by_sentences", "recursive"):
@@ -183,7 +183,7 @@ def print_query(index: int, item: dict, results: list[dict], store_size: int, an
     print(f"Question: {item['q']}")
     print(f"Filter: {item['filter']}")
     print("Strategy: RecursiveHierarchicalChunker")
-    print("Parameters: chunk_size=400")
+    print("Parameters: chunk_size=800")
     print(f"Store size: {store_size} chunks")
     print(f"Gold answer: {item['gold_answer']}")
     print(f"Expected document: {item['expected_doc_id']}")
@@ -221,14 +221,14 @@ def main() -> None:
     print_baseline(documents)
 
     embedding_fn = _select_embedder()
-    chunker = RecursiveHierarchicalChunker(chunk_size=400)
+    chunker = RecursiveHierarchicalChunker(chunk_size=800)
     store = build_knowledge_base(DATA_DIR, embedding_fn=embedding_fn, chunker=chunker)
     llm_fn = select_llm()
     agent = KnowledgeBaseAgent(store=store, llm_fn=llm_fn)
 
     print("\n=== PERSONAL STRATEGY BENCHMARK ===")
     print("Strategy: RecursiveHierarchicalChunker")
-    print("Parameters: chunk_size=400")
+    print("Parameters: chunk_size=800")
     print(f"Corpus: {DATA_DIR}")
     print(f"Total chunks loaded: {store.get_collection_size()}")
 
@@ -260,7 +260,7 @@ def main() -> None:
             "question": item["q"],
             "filter": item["filter"],
             "strategy": "RecursiveHierarchicalChunker",
-            "strategy_params": {"chunk_size": 400},
+            "strategy_params": {"chunk_size": 800},
             "store_size": store.get_collection_size(),
             "gold_answer": item["gold_answer"],
             "expected_doc_id": item["expected_doc_id"],
@@ -294,10 +294,10 @@ def main() -> None:
     RESULTS_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
     total_score = sum(row["score"] for row in report_rows)
     report_lines = [
-        "# Báo cáo cá nhân — Recursive Hierarchical Chunking (chunk_size=400)",
+        "# Báo cáo cá nhân — Recursive Hierarchical Chunking (chunk_size=800)",
         "",
         f"- Corpus: `{DATA_DIR}`",
-        "- Strategy: `RecursiveHierarchicalChunker(chunk_size=400)` — heading trước, recursive split section dài",
+        "- Strategy: `RecursiveHierarchicalChunker(chunk_size=800)` — heading trước, recursive split section dài",
         f"- Embedder: `{getattr(embedding_fn, '_backend_name', embedding_fn.__class__.__name__)}`",
         "- Giới hạn embedder: nếu dùng MockEmbedder, vector xác định nhưng gần như ngẫu nhiên theo toàn chuỗi, không phản ánh tốt ngữ nghĩa tiếng Việt.",
         f"- Tổng số chunk: **{store.get_collection_size()}**",
