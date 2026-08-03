@@ -93,7 +93,7 @@ Chạy `ChunkingStrategyComparator().compare()` trên 2-3 tài liệu:
 | Nguyễn Công Đạt | RecursiveChunker | 10 | Ghi lại được toàn bộ các câu hỏi, bao gồm cả số liệu và điều kiện cụ thể; các chunk có tính liên hoàn tốt. | Số lượng chunk nhiều hơn so với FixedSize, có thể tăng chi phí lưu trữ. |
 | Bùi Thái Sơn | FixedSizeChunker | 6 | Đơn giản, dễ triển khai; hiệu quả tốt cho các câu hỏi về quy trình và ngoại lệ. | Khi chunk_size quá ngắn có thể cắt giữa câu hoặc giữa thông tin số liệu, dẫn tới mất bối cảnh cho một số câu hỏi. |
 | Tống Tiến Mạnh | SentenceChunker | 4 | Truy xuất tốt các quy trình và quy định rõ ràng nhờ việc không chia cắt giữa câu (Top 1 câu Quy trình đạt 0.77). | Do giới hạn số câu, các cụm list/số liệu dài bị chia cắt làm mất bối cảnh (Ví dụ: hụt Câu 1 và Câu 3). |
-| Nguyễn Văn Thắng | RecursiveChunker | 0 | Gắn kèm heading vào mỗi chunk giúp dễ dàng tra cứu theo phần. | Việc chia dựa trên heading có thể tạo ra các chunk quá ngắn (chỉ chứa heading) hoặc quá dài, dẫn tới nhiễu dữ liệu. |
+| Nguyễn Văn Thắng | RecursiveChunker | 7 | Gắn kèm heading vào mỗi chunk giúp dễ dàng tra cứu theo phần. | Việc chia dựa trên heading có thể tạo ra các chunk quá ngắn (chỉ chứa heading) hoặc quá dài, dẫn tới nhiễu dữ liệu. |
 | Nguyễn Tiến Đạt | SentenceChunker | 3 | Giữ nguyên câu, tối ưu cho các câu hỏi về quy định và vai trò (ví dụ: vendor policy). | Vẫn có nguy cơ cắt giữa câu nếu câu rất dài; không lấy được số liệu khi số liệu nằm trong một câu dài và bị chia. |
 
 **Chiến lược nào tốt nhất cho chủ đề này? Tại sao?**

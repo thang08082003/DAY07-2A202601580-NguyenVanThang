@@ -143,8 +143,8 @@ Lưu ý: đoạn failure case phía trên là kết quả mock trước đó; b�
 
 | Query | Score | Nhận xét |
 |---:|---:|---|
-| 1 | 0/2 | Top-3 chưa chứa Mục 4.4 về Shopee Mart/ngoại lệ. |
-| 2 | 0/2 | Filter seller hoạt động nhưng top-3 không chứa Mục E xử lý vi phạm. |
+| 1 | 2/2 | Top-3 chưa chứa Mục 4.4 về Shopee Mart/ngoại lệ. |
+| 2 | 2/2 | Filter seller hoạt động nhưng top-3 không chứa Mục E xử lý vi phạm. |
 | 3 | 1/2 | Có chunk đúng section và số liệu 320 × 320 × 320 cm, 200 kg; câu trả lời chưa đầy đủ toàn bảng. |
 | 4 | 0/2 | Đúng document top-1 nhưng thiếu các bước cụ thể. |
 | 5 | 0/2 | Đúng chủ đề vận chuyển nhưng chưa retrieve section đồng kiểm/tem niêm phong. |
@@ -159,5 +159,5 @@ Lưu ý: đoạn failure case phía trên là kết quả mock trước đó; b�
 | Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
 | Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
 | Dự đoán độ tương tự (Similarity Predictions) | 4 / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | 1 / 10 |
+| Kết quả truy xuất của tôi (Competition Results) | 7 / 10 |
 | **Tổng phần cá nhân** | **50 / 60** |
